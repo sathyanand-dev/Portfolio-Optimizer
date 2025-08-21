@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-optimizer",
+  "version": "1.0.0",
+  "description": "Indian Stock Portfolio Optimizer - Full Stack Application",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && uvicorn main:app --reload",
+    "frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "test": "cd backend && pytest",
+    "install-all": "cd backend && pip install -r requirements.txt && cd ../frontend && npm install",
+    "prepare-deploy": "node -e \"console.log('Run: prepare-deployment.bat (Windows) or ./prepare-deployment.sh (Linux/Mac)')\""
+  },
+  "keywords": [
+    "portfolio",
+    "optimization",
+    "indian",
+    "stocks",
+    "fastapi",
+    "react",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "python": ">=3.8.0"
+  }
+}

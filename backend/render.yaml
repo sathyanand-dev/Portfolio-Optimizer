@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: portfolio-optimizer-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./portfolio_optimizer.db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 30
+      - key: RISK_FREE_RATE
+        value: 0.07
+      - key: DEFAULT_MARKET_SUFFIX
+        value: .NS
+      - key: CACHE_DURATION_MINUTES
+        value: 15
